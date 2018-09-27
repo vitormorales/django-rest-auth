@@ -256,7 +256,7 @@ class PasswordChangeSerializer(serializers.Serializer):
         )
 
         if all(invalid_password_conditions):
-            raise serializers.ValidationError('Invalid password')
+            raise serializers.ValidationError(_('Invalid password'))
         return value
 
     def validate(self, attrs):
