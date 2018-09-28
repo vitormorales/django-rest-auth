@@ -1,7 +1,9 @@
 from django.contrib.auth import get_user_model, authenticate
 from django.conf import settings
 from django.contrib.auth.forms import PasswordResetForm, SetPasswordForm
+from django.contrib.auth.models import update_last_login
 from django.contrib.auth.tokens import default_token_generator
+from django.core.exceptions import FieldError
 from django.utils.http import urlsafe_base64_decode as uid_decoder
 from django.utils.translation import ugettext_lazy as _
 from django.utils.encoding import force_text
@@ -22,7 +24,13 @@ class LoginSerializer(serializers.Serializer):
     password = serializers.CharField(style={'input_type': 'password'})
 
     def authenticate(self, **kwargs):
-        return authenticate(self.context['request'], **kwargs)
+        user = authenticate(self.context['request'], **kwargs)
+        if user:
+            try:
+                update_last_login(None, user)
+            except Exception:
+                raise FieldError(_('last_login field doesnt exists. Create field or override django.rest-auth.LoginSerializer'))
+        return user
 
     def _validate_email(self, email, password):
         user = None

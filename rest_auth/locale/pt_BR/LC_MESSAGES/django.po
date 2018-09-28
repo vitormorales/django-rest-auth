@@ -40,23 +40,23 @@ msgstr ""
 
 #: rest_auth/registration/serializers.py:125
 msgid "Incorrect value"
-msgstr ""
+msgstr "Valor incorreto"
 
 #: rest_auth/registration/serializers.py:139
 msgid "User is already registered with this e-mail address."
-msgstr ""
+msgstr "Usário já foi registrado com esse email"
 
 #: rest_auth/registration/serializers.py:185
 msgid "A user is already registered with this e-mail address."
-msgstr ""
+msgstr "Usário já foi registrado com esse email"
 
 #: rest_auth/registration/serializers.py:193
 msgid "The two password fields didn't match."
-msgstr ""
+msgstr "Senhas não conferem"
 
 #: rest_auth/registration/views.py:51
 msgid "Verification e-mail sent."
-msgstr ""
+msgstr "E-mail de verificação enviado"
 
 #: rest_auth/registration/views.py:98
 msgid "ok"
@@ -80,7 +80,7 @@ msgstr ""
 
 #: rest_auth/serializers.py:101
 msgid "Unable to log in with provided credentials."
-msgstr ""
+msgstr "Login e/ou senha incorretos"
 
 #: rest_auth/serializers.py:110
 msgid "E-mail is not verified."
@@ -96,7 +96,7 @@ msgstr ""
 
 #: rest_auth/views.py:175
 msgid "Password reset e-mail has been sent."
-msgstr ""
+msgstr "E-mail de recuperação de senha enviado"
 
 #: rest_auth/views.py:201
 msgid "Password has been reset with the new password."
@@ -104,4 +104,4 @@ msgstr ""
 
 #: rest_auth/views.py:223
 msgid "New password has been saved."
-msgstr ""
+msgstr "Nova senha salva"
